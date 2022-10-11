@@ -36,7 +36,7 @@ class _LoginButtonState extends State<LoginButton> {
             style: GoogleFonts.inriaSerif(
                 fontSize: 30,
                 color: Colors.white,
-                fontWeight: FontWeight.w300)),
+                fontWeight: FontWeight.w400)),
       ),
     );
   }
