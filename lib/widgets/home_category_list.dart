@@ -33,7 +33,7 @@ class _HomeCategoryListState extends State<HomeCategoryList> {
       margin: EdgeInsets.only(left: 10, top: 17),
       child: SizedBox(
         width: double.infinity,
-        height: 150,
+        height: 110,
         child: ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
