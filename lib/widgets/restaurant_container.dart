@@ -6,18 +6,31 @@ class RestaurantContainer extends StatefulWidget {
   final String restaurantname;
   final String staricon;
   final String ratetext;
+  final String carbontime;
+  final String carbontimetext;
+  final String doticon;
+  final String distancetext;
+  final Color newcontainercolor;
+  final String newtext;
   const RestaurantContainer(
       {super.key,
       required this.imageurl,
       required this.restaurantname,
       required this.staricon,
-      required this.ratetext});
+      required this.ratetext,
+      required this.carbontime,
+      required this.carbontimetext,
+      required this.doticon,
+      required this.distancetext,
+      required this.newcontainercolor,
+      required this.newtext});
 
   @override
   State<RestaurantContainer> createState() => _RestaurantContainerState();
 }
 
 class _RestaurantContainerState extends State<RestaurantContainer> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +56,7 @@ class _RestaurantContainerState extends State<RestaurantContainer> {
         ],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -71,9 +85,53 @@ class _RestaurantContainerState extends State<RestaurantContainer> {
                     )
                   ]),
                 ),
+                Row(
+                  children: [
+                    TextButton.icon(
+                      onPressed: () {},
+                      icon: Image.asset(widget.carbontime),
+                      label: Text(
+                        widget.carbontimetext,
+                        style: GoogleFonts.inter(
+                            fontSize: 13,
+                            color: Color(0xffB3B3B3),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    TextButton.icon(
+                      onPressed: () {},
+                      icon: Image.asset(widget.doticon),
+                      label: Text(
+                        widget.distancetext,
+                        style: GoogleFonts.inter(
+                            fontSize: 13,
+                            color: Color(0xffB3B3B3),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
-          )
+          ),
+          Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(left: 10),
+            width: 55,
+            height: 30,
+            decoration: BoxDecoration(
+                color: widget.newcontainercolor,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(14),
+                    bottomLeft: Radius.circular(14))),
+            child: Text(
+              widget.newtext,
+              style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
         ],
       ),
     );
