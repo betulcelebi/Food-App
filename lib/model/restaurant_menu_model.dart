@@ -5,7 +5,8 @@ class RestaurantMenuModel {
   final String foodStar;
   final String foodRate;
   final String foodPrice;
-  final bool buttonSelected;
+  final bool buttonSelectedLeft;
+  final bool buttonSelectedRight;
   final String buttonIconLeft;
   final String buttonIconRight;
   final String buttonText;
@@ -17,7 +18,8 @@ class RestaurantMenuModel {
     required this.foodStar,
     required this.foodRate,
     required this.foodPrice,
-    required this.buttonSelected,
+    required this.buttonSelectedLeft,
+    required this.buttonSelectedRight,
     required this.buttonIconLeft,
     required this.buttonIconRight,
     required this.buttonText,
@@ -26,16 +28,17 @@ class RestaurantMenuModel {
 
 List<RestaurantMenuModel> menuItems = [
   RestaurantMenuModel(
-      images: "assets/chickenburger",
+      images: "assets/chickenburger.png",
       foodNames: "Chicken Burger",
       foodDescription:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       foodStar: "assets/mstar.png",
       foodRate: "4.5",
       foodPrice: "\$ 7",
-      buttonSelected: true,
-      buttonIconLeft: "-",
-      buttonIconRight: '+',
+      buttonSelectedLeft: false,
+      buttonSelectedRight: true,
+      buttonIconLeft: "assets/minus.png",
+      buttonIconRight: "assets/plus.png",
       buttonText: "1"),
   RestaurantMenuModel(
       images: "assets/potato.png",
@@ -45,9 +48,10 @@ List<RestaurantMenuModel> menuItems = [
       foodStar: "assets/mstar.png",
       foodRate: "4",
       foodPrice: "\$ 8",
-      buttonSelected: false,
-      buttonIconLeft: "-",
-      buttonIconRight: "+",
+      buttonSelectedLeft: false,
+      buttonSelectedRight: false,
+      buttonIconLeft: "assets/minus.png",
+      buttonIconRight: "assets/plus.png",
       buttonText: "0"),
   RestaurantMenuModel(
     images: "assets/supreme.png",
@@ -56,9 +60,10 @@ List<RestaurantMenuModel> menuItems = [
     foodStar: "assets/mstar.png",
     foodRate: "4.3",
     foodPrice: "\$ 6",
-    buttonSelected: false,
-    buttonIconLeft: "-",
-    buttonIconRight: "+",
+    buttonSelectedLeft: false,
+    buttonSelectedRight: false,
+    buttonIconLeft: "assets/minus.png",
+    buttonIconRight: "assets/plus.png",
     buttonText: "0",
   ),
   RestaurantMenuModel(
@@ -68,9 +73,10 @@ List<RestaurantMenuModel> menuItems = [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       foodStar: "assets/mstar.png",
       foodRate: "4.5",
-      foodPrice: "\$ 10",
-      buttonSelected: false,
-      buttonIconLeft: "-",
-      buttonIconRight: "+",
+      foodPrice: "\$ 9",
+      buttonSelectedLeft: false,
+      buttonSelectedRight: false,
+      buttonIconLeft: "assets/minus.png",
+      buttonIconRight: "assets/plus.png",
       buttonText: "0"),
 ];
