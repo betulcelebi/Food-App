@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:food_app/pages/home_page.dart';
 import 'package:food_app/widgets/account_text.dart';
 import 'package:food_app/widgets/bg_image.dart';
 import 'package:food_app/widgets/login_button.dart';
@@ -22,7 +23,16 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           BgImage(),
           LoginText(),
-          LoginButton(),
+          GestureDetector(
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const HomeScreen(),
+                  ),
+                );
+              },
+              child: LoginButton()),
           AccountText(),
         ],
       ),

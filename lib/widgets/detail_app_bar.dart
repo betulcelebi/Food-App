@@ -23,7 +23,9 @@ class DetailAppBar extends StatelessWidget {
                 child: Image.asset("assets/like.png")))
       ],
       leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context, true);
+          },
           icon: Container(
               alignment: Alignment.center,
               width: 32,

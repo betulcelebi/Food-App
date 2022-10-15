@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/home_page.dart';
+import 'package:food_app/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Food App Home Page'),
+      home: const SplashScreen(),
     );
   }
 }

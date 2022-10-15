@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:food_app/pages/detail_page.dart';
 import 'package:food_app/widgets/bottom_navigation.dart';
 
 import '../widgets/appbar.dart';
@@ -20,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int customselectedindex=0;
+  int customselectedindex = 0;
   List<String> imagepath = [
     "assets/burgerking.png",
     "assets/pizzania.png",
@@ -69,17 +70,32 @@ class _HomeScreenState extends State<HomeScreen> {
               shrinkWrap: true,
               itemCount: imagepath.length,
               itemBuilder: (context, index) {
-                return RestaurantContainer(
-                  imageurl: imagepath[index],
-                  restaurantname: rstrntname[index],
-                  staricon: starimage[index],
-                  ratetext: ratetxt[index],
-                  carbontime: crbnicon[index],
-                  carbontimetext: crbntext[index],
-                  doticon: dotimage[index],
-                  distancetext: dstncetext[index],
-                  newcontainercolor: newcolor[index],
-                  newtext: newstring[index],
+                return GestureDetector(
+                  onTap: index == 0
+                      ? () {
+                          Navigator.push<void>(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const DetailScreen(),
+                            ),
+                          );
+                        }
+                      : () {
+                          null;
+                        },
+                  child: RestaurantContainer(
+                    imageurl: imagepath[index],
+                    restaurantname: rstrntname[index],
+                    staricon: starimage[index],
+                    ratetext: ratetxt[index],
+                    carbontime: crbnicon[index],
+                    carbontimetext: crbntext[index],
+                    doticon: dotimage[index],
+                    distancetext: dstncetext[index],
+                    newcontainercolor: newcolor[index],
+                    newtext: newstring[index],
+                  ),
                 );
               },
             ),
